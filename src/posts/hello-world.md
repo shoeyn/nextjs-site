@@ -1,8 +1,9 @@
 ---
-title: 'Hello World'
-date: '2020-01-01'
+title: "Hello World"
+date: "2024-06-14"
 categories:
-    - journey
+  - journey
+  - react
 ---
 
 # Hello world

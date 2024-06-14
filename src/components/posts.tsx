@@ -1,22 +1,22 @@
-import { type Post } from '@/lib/posts';
-import Link from 'next/link';
+import { type Post } from "@/lib/posts";
+import Link from "next/link";
+import { Bento } from "./bento";
 
 export function Posts({ posts }: { posts: Post[] }) {
   return (
-    <ol>
+    <div className="grid lg:grid-cols-2">
       {posts.map(({ slug, title, date, categories }) => (
-        <li key={slug}>
+        <Bento key={slug}>
           <h2>
             <Link href={`/blog/${slug}`}>{title}</Link>
           </h2>
           <p>
-            <strong>Published:</strong>{' '}
-            {new Date(date).toLocaleDateString()}{' '}
-            <strong>Categories:</strong>{' '}
-            {categories.map((cat, i) => `${i ? ', ' : ''}${cat}`)}
+            <strong>Published:</strong> {new Date(date).toLocaleDateString()}{" "}
+            <strong>Categories:</strong>{" "}
+            {categories.map((cat, i) => `${i ? ", " : ""}${cat}`)}
           </p>
-        </li>
+        </Bento>
       ))}
-    </ol>
+    </div>
   );
 }

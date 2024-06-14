@@ -1,4 +1,4 @@
-import matter from 'gray-matter';
+import matter from "gray-matter";
 
 const typedMatter = <T = any>(markdown: string) => {
   const rawMatter = matter(markdown);
