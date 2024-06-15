@@ -1,5 +1,6 @@
 import { Bento } from "@/components/bento";
 import { getPostData, getSortedPostsData } from "@/lib/posts";
+import Link from "next/link";
 
 export function generateStaticParams() {
   const posts = getSortedPostsData();
@@ -30,6 +31,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         className="prose"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
+      <Link href="/" className="button">Back to Home</Link>
     </Bento>
   );
 }

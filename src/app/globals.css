@@ -27,7 +27,7 @@ body {
       rgba(9, 114, 255, 0.4) 60%,
       rgba(75, 0, 255, 0.3) 100%
     )
-    no-repeat;
+    no-repeat fixed;
 }
 
 .glass {
@@ -40,6 +40,6 @@ body {
 }
 
 .personal-info svg {
-  margin-right: .5em;
+  margin-right: 0.5em;
   height: 16px;
 }

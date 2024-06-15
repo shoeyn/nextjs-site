@@ -3,6 +3,7 @@ import "./globals.css";
 import { PersonalInfo } from "@/components/personalInfo";
 import { Bento } from "@/components/bento";
 import Image from "next/image";
+import { GlowCapture } from "@codaworks/react-glow";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,27 +21,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="container mx-auto">
-        <div className="grid grid-cols-1 gap-8 p-16 lg:grid-cols-3">
-          <PersonalInfo />
-          <main className="space-y-8 lg:col-span-2">
-            <Bento>
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/icon.svg"
-                  alt="Vercel Logo"
-                  width={60}
-                  height={60}
-                  priority
-                />
-                <div>
-                  <h2>Personal blog showing development of languages.</h2>
-                  <p>Current journey: React</p>
+        <GlowCapture>
+          <div className="grid grid-cols-1 gap-4 p-4 lg:grid-cols-3 lg:gap-8 lg:p-16">
+            <PersonalInfo />
+            <main className="space-y-4 lg:col-span-2 lg:space-y-8">
+              <Bento>
+                <div className="flex items-center gap-4">
+                  <Image
+                    src="/icon.svg"
+                    alt="Vercel Logo"
+                    width={60}
+                    height={60}
+                    priority
+                  />
+                  <div>
+                    <h2>Personal blog showing development of languages.</h2>
+                    <p>Current journey: React/Next.js, Java + Spring Boot</p>
+                  </div>
                 </div>
-              </div>
-            </Bento>
-            {children}
-          </main>
-        </div>
+              </Bento>
+              {children}
+            </main>
+          </div>
+        </GlowCapture>
       </body>
     </html>
   );
