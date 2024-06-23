@@ -40,6 +40,6 @@ body {
 }
 
 .button {
-  @apply rounded bg-theme-gradient px-4 py-2 font-semibold tracking-wider uppercase mt-4 lg:mt-8 inline-block;
+  @apply mt-4 inline-block rounded bg-theme-gradient px-4 py-2 font-semibold uppercase tracking-wider lg:mt-8;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }

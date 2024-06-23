@@ -4,7 +4,7 @@ import { Bento } from "./bento";
 
 export function Posts({ posts }: { posts: Post[] }) {
   return (
-    <div className="grid lg:grid-cols-2 gap-4 lg:gap-8">
+    <div className="grid gap-4 lg:grid-cols-2 lg:gap-8">
       {posts.map(({ slug, title, date, categories }) => (
         <Bento key={slug}>
           <h2>

@@ -7,10 +7,11 @@ import { GlowCapture } from "@codaworks/react-glow";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Nathan Shoemark',
-    default: 'Personal Development Blog',
+    template: "%s | Nathan Shoemark",
+    default: "Personal Development Blog",
   },
-  description: "Personal development blog and CV related information for Nathan Shoemark",
+  description:
+    "Personal development blog and CV related information for Nathan Shoemark",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },

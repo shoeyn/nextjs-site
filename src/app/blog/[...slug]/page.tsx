@@ -6,7 +6,7 @@ export function generateStaticParams() {
   const posts = getSortedPostsData();
 
   return posts.map((post) => ({
-    slug: post.slug.split('/'),
+    slug: post.slug.split("/"),
   }));
 }
 
@@ -31,7 +31,9 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
         className="prose-lg"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
-      <Link href="/" className="button">Back to Home</Link>
+      <Link href="/" className="button">
+        Back to Home
+      </Link>
     </Bento>
   );
 }
