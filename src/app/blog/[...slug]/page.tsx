@@ -6,14 +6,14 @@ export function generateStaticParams() {
   const posts = getSortedPostsData();
 
   return posts.map((post) => ({
-    slug: post.slug,
+    slug: post.slug.split('/'),
   }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string[] };
 }) {
   const post = await getPostData(params.slug);
 
@@ -22,13 +22,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: { params: { slug: string[] } }) {
   const post = await getPostData(params.slug);
 
   return (
     <Bento>
       <div
-        className="prose"
+        className="prose-lg"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
       <Link href="/" className="button">Back to Home</Link>
