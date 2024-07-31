@@ -1,6 +1,6 @@
 import { Bento } from "./bento";
 import Image from "next/image";
-import profilePic from "@/images/self.jpg";
+import profilePic from "@/images/self.webp";
 import { MailIcon } from "./icons/mail";
 import { LinkedinIcon } from "./icons/linkedin";
 import { GtihubIcon } from "./icons/github";
@@ -21,13 +21,13 @@ export function PersonalInfo() {
       <div className="flex flex-wrap justify-between">
         <div className="flex items-center">
           <MailIcon />
-          n.shoemark@gmail.com
+          <span className="ml-2">n.shoemark@gmail.com</span>
         </div>
-        <div className="flex items-center gap-2">
-          <a href="https://www.linkedin.com/in/nathanshoemark/">
+        <div className="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/nathanshoemark/" title="Linkedin Profile">
             <LinkedinIcon />
           </a>
-          <a href="https://github.com/shoeyn">
+          <a href="https://github.com/shoeyn" title="Github Profile">
             <GtihubIcon />
           </a>
         </div>
