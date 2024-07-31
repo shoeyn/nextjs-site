@@ -35,8 +35,11 @@ body {
 }
 
 .personal-info svg {
-  margin-right: 0.5em;
   height: 16px;
+}
+
+.personal-info a {
+  @apply p-2;
 }
 
 .button {
