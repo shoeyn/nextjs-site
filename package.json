@@ -19,19 +19,19 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/node": "^22.0.0",
+    "@tailwindcss/typography": "^0.5.14",
+    "@types/node": "^22.2.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.7",
-    "postcss": "^8.4.40",
+    "lint-staged": "^15.2.8",
+    "postcss": "^8.4.41",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.7",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.9",
     "typescript": "^5.5.4"
   },
   "lint-staged": {
