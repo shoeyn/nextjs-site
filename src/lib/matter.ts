@@ -1,6 +1,6 @@
 import matter from "gray-matter";
 
-const typedMatter = <T = unknown>(markdown: string) => {
+const typedMatter = <T>(markdown: string) => {
   const rawMatter = matter(markdown);
 
   return {
