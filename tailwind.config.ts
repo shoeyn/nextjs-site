@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
-import reactGlow from "@codaworks/react-glow/tailwind";
 
 const config: Config = {
   content: [
@@ -25,6 +24,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [typography, reactGlow],
+  plugins: [typography],
 };
 export default config;

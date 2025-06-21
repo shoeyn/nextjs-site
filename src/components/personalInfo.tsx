@@ -24,7 +24,10 @@ export function PersonalInfo() {
           <span className="ml-2">n.shoemark@gmail.com</span>
         </div>
         <div className="flex items-center gap-4">
-          <a href="https://www.linkedin.com/in/nathanshoemark/" title="Linkedin Profile">
+          <a
+            href="https://www.linkedin.com/in/nathanshoemark/"
+            title="Linkedin Profile"
+          >
             <LinkedinIcon />
           </a>
           <a href="https://github.com/shoeyn" title="Github Profile">
