@@ -9,7 +9,7 @@ export function PersonalInfo() {
   return (
     <Bento className="personal-info">
       <Image
-        className="rounded-2xl border shadow"
+        className="rounded-2xl border shadow-sm"
         src={profilePic}
         alt="Nathan Shoemark"
         priority

@@ -1,6 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+  --background-image-theme-gradient: radial-gradient(
+    at bottom left,
+    rgba(146, 0, 255, 0.3) 0%,
+    rgba(110, 30, 255, 0.2) 29%,
+    rgba(9, 114, 255, 0.4) 60%,
+    rgba(75, 0, 255, 0.3) 100%
+  );
+
+  --color-theme1: #9200ff;
+  --color-theme2: #6e1eff;
+  --color-theme3: #0972ff;
+  --color-theme4: #4b00ff;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 html,
 body {
@@ -26,6 +62,7 @@ body {
 }
 
 .glass {
+  @apply transition ease-in-out duration-300;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -43,6 +80,6 @@ body {
 }
 
 .button {
-  @apply mt-4 inline-block rounded bg-theme-gradient px-4 py-2 font-semibold uppercase tracking-wider lg:mt-8;
+  @apply mt-4 inline-block rounded-sm bg-theme-gradient px-4 py-2 font-semibold uppercase tracking-wider lg:mt-8;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
