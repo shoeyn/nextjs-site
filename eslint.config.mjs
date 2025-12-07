@@ -1,3 +1,5 @@
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 import { FlatCompat } from "@eslint/eslintrc";
 
 const compat = new FlatCompat({
@@ -6,9 +8,20 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  ...nextCoreWebVitals,
+  ...nextTypescript,
   ...compat.config({
-    extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+    extends: ["prettier"],
   }),
+  {
+    ignores: [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "build/**",
+      "next-env.d.ts",
+    ],
+  },
 ];
 
 export default eslintConfig;
