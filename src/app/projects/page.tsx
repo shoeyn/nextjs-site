@@ -57,7 +57,7 @@ export default function ProjectsPage() {
                   ISO/IEC 18013-5
                 </span>
               </div>
-              <h2 className="font-display text-2xl font-bold text-slate-950 sm:text-3xl dark:text-zinc-50">
+              <h2 className="font-display text-2xl font-bold text-slate-900 sm:text-3xl dark:text-zinc-50">
                 mdoc-builder (Mobile Driving Licence)
               </h2>
             </div>

@@ -33,7 +33,7 @@ export default async function Page(props: {
       <div>
         <Link
           href="/blog"
-          className="hover:text-accent-primary dark:hover:text-accent-primary group inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition-colors dark:text-zinc-400"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition-colors hover:text-slate-900 dark:text-zinc-400 dark:hover:text-zinc-50"
         >
           <svg
             className="h-4 w-4 transform transition-transform group-hover:-translate-x-1"
@@ -79,7 +79,7 @@ export default async function Page(props: {
               ))}
             </div>
           </div>
-          <h1 className="font-display text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl dark:text-zinc-50">
+          <h1 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-zinc-50">
             {post.title}
           </h1>
         </div>

@@ -117,9 +117,9 @@ export default function Home() {
       <section className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         {[
           { label: "Professional Experience", value: "12+ Years" },
-          { label: "Peak Ingestion Load", value: "15k/sec" },
-          { label: "Cloud Cost Savings", value: "60%" },
-          { label: "Active User Reach", value: "1M+" },
+          { label: "Products Delivered", value: "150+" },
+          { label: "Active Production Services", value: "30+" },
+          { label: "Active User Reach", value: "9M+" },
         ].map((stat, sIdx) => (
           <div
             key={sIdx}
@@ -239,7 +239,7 @@ export default function Home() {
             <span className="badge-pastel border-accent-secondary/20 text-accent-secondary bg-accent-secondary/5 px-2 py-0.5 text-[9px] tracking-widest uppercase">
               Humanity & Life Values
             </span>
-            <h3 className="font-display text-xl font-bold text-slate-950 dark:text-zinc-50">
+            <h3 className="font-display text-xl font-bold text-slate-900 dark:text-zinc-50">
               Parenthood & Engineering Leadership
             </h3>
             <p className="max-w-2xl text-sm text-slate-600 dark:text-zinc-400">

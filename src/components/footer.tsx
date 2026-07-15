@@ -23,7 +23,7 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <a
               href="mailto:n.shoemark@gmail.com"
-              className="hover:text-accent-primary dark:hover:text-accent-primary flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors dark:text-zinc-300"
+              className="flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 dark:text-zinc-300 dark:hover:text-zinc-50"
               title="Send email"
             >
               <MailIcon />
@@ -33,7 +33,7 @@ export function Footer() {
             <div className="flex items-center gap-4 text-slate-600 dark:text-zinc-300">
               <a
                 href="https://www.linkedin.com/in/nathanshoemark/"
-                className="hover:text-accent-primary dark:hover:text-accent-primary transition-colors"
+                className="transition-colors hover:text-slate-900 dark:hover:text-zinc-50"
                 title="LinkedIn Profile"
                 target="_blank"
                 rel="noreferrer"
@@ -44,7 +44,7 @@ export function Footer() {
               </a>
               <a
                 href="https://github.com/shoeyn"
-                className="hover:text-accent-primary dark:hover:text-accent-primary transition-colors"
+                className="transition-colors hover:text-slate-900 dark:hover:text-zinc-50"
                 title="GitHub Profile"
                 target="_blank"
                 rel="noreferrer"

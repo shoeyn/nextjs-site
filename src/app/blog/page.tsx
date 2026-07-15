@@ -84,7 +84,7 @@ export default function BlogIndexPage() {
                   </div>
 
                   {/* Title */}
-                  <h2 className="font-display hover:text-accent-primary dark:hover:text-accent-primary text-xl leading-snug font-bold text-slate-950 transition-colors sm:text-2xl dark:text-zinc-50">
+                  <h2 className="font-display hover:text-accent-primary dark:hover:text-accent-primary text-xl leading-snug font-bold text-slate-900 transition-colors sm:text-2xl dark:text-zinc-50">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
 
@@ -101,7 +101,7 @@ export default function BlogIndexPage() {
                   </span>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="text-accent-primary hover:text-accent-secondary inline-flex items-center gap-1 text-sm font-semibold transition-colors"
+                    className="hover:text-accent-primary dark:hover:text-accent-primary inline-flex items-center gap-1 text-sm font-semibold text-slate-800 transition-colors dark:text-zinc-200"
                   >
                     Read Post
                     <svg
