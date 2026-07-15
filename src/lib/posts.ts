@@ -3,6 +3,7 @@ import path from "path";
 import typedMatter from "./matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { cache } from "react";
 
 export interface Post {
   slug: string;
@@ -13,7 +14,7 @@ export interface Post {
 
 const postsDirectory = path.join(process.cwd(), "./src/posts");
 
-export function getSortedPostsData(): Post[] {
+export const getSortedPostsData = cache((): Post[] => {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -39,12 +40,12 @@ export function getSortedPostsData(): Post[] {
   });
   // Sort posts by date
   return allPostsData.sort((a, b) => +new Date(b.date) - +new Date(a.date));
-}
+});
 
-export async function getPostData(id: string[]) {
+export const getPostData = cache(async (id: string[]) => {
   const slug = id.join("_");
   const fullPath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = await fs.promises.readFile(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
   const matterResult = typedMatter<{
@@ -66,24 +67,26 @@ export async function getPostData(id: string[]) {
     contentHtml,
     ...matterResult.data,
   };
-}
+});
 
-export function getPaginatedPosts({
-  page,
-  limit,
-}: {
-  page: number;
-  limit: number;
-}): { posts: Post[]; total: number } {
-  const allPosts = getSortedPostsData();
+export const getPaginatedPosts = cache(
+  ({
+    page,
+    limit,
+  }: {
+    page: number;
+    limit: number;
+  }): { posts: Post[]; total: number } => {
+    const allPosts = getSortedPostsData();
 
-  // Get a subset of posts pased on page and limit
-  const paginatedPosts = allPosts.slice((page - 1) * limit, page * limit);
+    // Get a subset of posts pased on page and limit
+    const paginatedPosts = allPosts.slice((page - 1) * limit, page * limit);
 
-  return {
-    posts: paginatedPosts,
-    total: allPosts.length,
-  };
-}
+    return {
+      posts: paginatedPosts,
+      total: allPosts.length,
+    };
+  },
+);
 
 export const postsPerPage = 3 as const;

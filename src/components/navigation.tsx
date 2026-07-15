@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
+import { Logo } from "./logo";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,13 +30,16 @@ export default function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo / Branding */}
           <div className="flex-shrink-0">
-            <Link href="/" className="group flex flex-col">
-              <span className="font-display group-hover:text-accent-primary dark:group-hover:text-accent-primary text-lg font-bold tracking-tight text-slate-900 transition-colors dark:text-zinc-50">
-                Nathan Shoemark
-              </span>
-              <span className="-mt-1 text-[10px] font-semibold tracking-wider text-slate-500 uppercase transition-colors group-hover:text-slate-700 dark:text-zinc-400 dark:group-hover:text-zinc-300">
-                Senior Software Engineer
-              </span>
+            <Link href="/" className="group flex items-center gap-2.5">
+              <Logo />
+              <div className="flex flex-col">
+                <span className="font-display group-hover:text-accent-primary dark:group-hover:text-accent-primary text-base leading-none font-bold tracking-tight text-slate-900 transition-colors md:text-lg dark:text-zinc-50">
+                  Nathan Shoemark
+                </span>
+                <span className="mt-0.5 text-[9px] font-semibold tracking-wider text-slate-500 uppercase transition-colors group-hover:text-slate-700 md:text-[10px] dark:text-zinc-400 dark:group-hover:text-zinc-300">
+                  Senior Software Engineer
+                </span>
+              </div>
             </Link>
           </div>
 

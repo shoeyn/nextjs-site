@@ -17,6 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nathanshoemark.com"),
   title: {
     template: "%s | Nathan Shoemark",
     default: "Nathan Shoemark | Senior Software Engineer",
@@ -25,6 +26,35 @@ export const metadata: Metadata = {
     "Senior Software Engineer portfolio and development blog for Nathan Shoemark, specializing in Ruby on Rails, Go, Java, and TypeScript/Serverless architectures.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Nathan Shoemark | Senior Software Engineer",
+    description:
+      "Senior Software Engineer portfolio and development blog for Nathan Shoemark, specializing in Ruby on Rails, Go, Java, and TypeScript/Serverless architectures.",
+    url: "https://nathanshoemark.com",
+    siteName: "Nathan Shoemark Portfolio",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nathan Shoemark | Senior Software Engineer",
+    description:
+      "Senior Software Engineer portfolio and development blog for Nathan Shoemark, specializing in Ruby on Rails, Go, Java, and TypeScript/Serverless architectures.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
