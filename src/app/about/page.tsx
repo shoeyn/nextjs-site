@@ -101,16 +101,20 @@ export default function AboutPage() {
         className="grid grid-cols-1 items-center gap-8 border-t border-slate-200/60 pt-8 md:grid-cols-5 dark:border-zinc-800/60"
       >
         {/* Family image */}
-        <div className="relative flex justify-center md:col-span-2">
-          <div className="group relative max-w-xs md:max-w-none">
-            {/* Glow effect on hover in dark mode */}
+        <div className="md:col-span-2">
+          <div className="group relative">
+            {/* Glow effect on hover */}
             <div className="from-accent-primary to-accent-secondary absolute inset-0 rounded-2xl bg-linear-to-r opacity-25 blur-lg transition-opacity duration-500 group-hover:opacity-40" />
-            <Image
-              src={profilePic}
-              alt="Nathan Shoemark and child"
-              className="relative z-10 aspect-5/4 w-full rounded-2xl border border-slate-200 object-cover shadow-md transition-transform duration-300 group-hover:scale-[1.01] dark:border-zinc-800"
-              priority
-            />
+            {/* Explicit aspect-ratio container — required for fill-mode Image */}
+            <div className="relative aspect-3/4 w-full overflow-hidden rounded-2xl border border-slate-200 shadow-md dark:border-zinc-800">
+              <Image
+                src={profilePic}
+                alt="Nathan Shoemark"
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                priority
+              />
+            </div>
           </div>
         </div>
 
@@ -132,13 +136,13 @@ export default function AboutPage() {
               senior engineering leadership.
             </p>
             <p>
-              In squad leadership, I focus heavily on mentoring and nurturing
-              the want to grow. A notable milestone was working closely with a
-              junior developer on my team, coaching them through complex
+              In squad leadership, I focus heavily on mentoring and fostering a
+              strong growth mindset. A notable milestone was working closely
+              with a junior developer on my team, coaching them through complex
               architectures and code reviews, and watching their technical
               confidence flourish. I helped guide them along their path, and
               they eventually progressed to a Senior Software Engineer who now
-              continuously contributes key libraries back to the organization.
+              continuously contributes key libraries back to the organisation.
             </p>
             <p>
               This philosophy of understanding extends to modern toolsets: I
@@ -151,7 +155,7 @@ export default function AboutPage() {
           <div className="pt-2">
             <Link
               href="mailto:n.shoemark@gmail.com"
-              className="rounded-lg border border-slate-300 px-4 py-2 text-xs font-semibold transition-all hover:bg-slate-100 dark:border-zinc-800 dark:hover:bg-zinc-900"
+              className="btn btn-outline btn-md"
             >
               Get in Touch
             </Link>

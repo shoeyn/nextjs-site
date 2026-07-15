@@ -15,7 +15,7 @@ export function Footer() {
               Nathan Shoemark
             </span>
             <p className="mt-1 text-xs text-slate-500 dark:text-zinc-400">
-              &copy; {currentYear} Personal Portfolio. All rights reserved.
+              &copy; {currentYear}. All rights reserved.
             </p>
           </div>
 

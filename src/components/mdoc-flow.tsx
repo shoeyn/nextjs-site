@@ -272,7 +272,7 @@ export function MdocFlow() {
             <button
               onClick={() => setActiveStep((prev) => Math.max(0, prev - 1))}
               disabled={activeStep === 0}
-              className="flex-1 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold transition-all hover:bg-slate-100 disabled:opacity-50 disabled:hover:bg-transparent dark:border-zinc-800 dark:hover:bg-zinc-900"
+              className="btn btn-outline btn-md flex-1 disabled:opacity-50 disabled:hover:bg-transparent"
             >
               Previous Step
             </button>
@@ -283,7 +283,7 @@ export function MdocFlow() {
                 )
               }
               disabled={activeStep === FLOW_STEPS.length - 1}
-              className="flex-1 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-slate-800 disabled:opacity-50 disabled:hover:bg-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+              className="btn btn-primary btn-md flex-1 disabled:opacity-50 disabled:hover:bg-zinc-50"
             >
               Next Step
             </button>

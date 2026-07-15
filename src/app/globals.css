@@ -121,3 +121,64 @@
   --tw-prose-links: var(--accent-primary);
   --tw-prose-bold: var(--text-main);
 }
+
+/* Standardized Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition-property:
+    color, background-color, border-color, text-decoration-color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.btn-md {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+/* Button Variants */
+.btn-primary {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+.btn-primary:hover {
+  background-color: #1e293b;
+}
+.dark .btn-primary {
+  background-color: #f4f4f5;
+  color: #09090b;
+}
+.dark .btn-primary:hover {
+  background-color: #e4e4e7;
+}
+
+.btn-outline {
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  background-color: transparent;
+}
+.btn-outline:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+.dark .btn-outline {
+  border-color: #27272a;
+  color: #d4d4d8;
+}
+.dark .btn-outline:hover {
+  background-color: #18181b;
+  color: #fafafa;
+}

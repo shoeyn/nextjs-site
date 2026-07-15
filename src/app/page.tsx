@@ -104,16 +104,10 @@ export default function Home() {
           architect mobile driving licence standards at the DVLA.
         </p>
         <div className="flex flex-wrap gap-4 pt-2">
-          <Link
-            href="/projects"
-            className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-slate-800 dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-200"
-          >
+          <Link href="/projects" className="btn btn-primary btn-md shadow-xs">
             Explore Projects
           </Link>
-          <Link
-            href="/about"
-            className="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold transition-all hover:bg-slate-100 dark:border-zinc-800 dark:hover:bg-zinc-900"
-          >
+          <Link href="/about" className="btn btn-outline btn-md">
             About Me & Story
           </Link>
         </div>
@@ -258,7 +252,7 @@ export default function Home() {
           </div>
           <Link
             href="/about#humanity"
-            className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold whitespace-nowrap shadow-xs transition-all hover:bg-slate-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800"
+            className="btn btn-outline btn-md shrink-0"
           >
             Read My Story
           </Link>
