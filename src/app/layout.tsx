@@ -87,7 +87,7 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-full flex-col transition-colors duration-300">
         <Navigation />
-        <main className="mx-auto flex w-full max-w-7xl flex-grow flex-col px-4 py-8 sm:px-6 md:py-12 lg:px-8">
+        <main className="mx-auto flex w-full max-w-7xl grow flex-col px-4 py-8 sm:px-6 md:py-12 lg:px-8">
           {children}
         </main>
         <Footer />

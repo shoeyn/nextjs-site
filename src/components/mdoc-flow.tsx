@@ -52,41 +52,41 @@ const FLOW_STEPS: FlowStep[] = [
     },
   },
   {
-    title: "3. Cryptographic Signing",
+    title: "3. Cryptographic Signing & HSM",
     actor: "Issuer",
     description:
-      "The DVLA Issuer validates the user's data against the central driver registry. It packages the data into CBOR namespaces, calculates digests, and constructs the Mobile Security Object (MSO). The Issuer then signs the MSO using its private certificate key, linking it to the Device Public Key.",
+      "The DVLA Issuer processes the request, compiles the driver claims, and generates a random set of digestID integers (shuffled to prevent tracking). Using mdoc-builder's external signing loop, the Issuer prepares the mDoc payload, requests a signature from a secure Hardware Security Module (HSM) or KMS, and compiles the final signed CBOR.",
     technicalDetails: {
-      title: "Signed Mobile Security Object (MSO) & COSE Sign1 Structure",
-      payload: `// Issuer Signature (COSE_Sign1)
-[
-  h'a10126', // Protected Headers (ES256)
-  {},        // Unprotected Headers
-  h'a3636d736f...', // Payload: MSO containing:
-                    // - Value Digests (SHA-256 of driver info)
-                    // - Validity Info (Iss/Exp dates)
-                    // - Device Public Key (bound to wallet)
-  h'8f5b4a92c3...'  // Signature (DVLA Private Key)
-]`,
+      title: "mdoc-builder HSM Signing Loop (Java)",
+      payload: `// 1. Build document & prepare mDoc
+MDoc mDoc = MDoc.builder()
+        .setDocument(drivingDoc)
+        .setValidFor(Duration.ofDays(365))
+        .setDeviceKey(devicePublicKey)
+        .setIssuerKey(new KeyCert(issuerCert))
+        .prepareForSigning();
+
+// 2. Fetch unsigned bytes & sign via HSM
+byte[] toSign = mDoc.getToSign();
+byte[] signature = hsmKms.sign(toSign);
+
+// 3. Compile signed ISO/IEC 18013-5 mdoc
+byte[] signedMdoc = mDoc.buildWithSignature(signature);`,
     },
   },
   {
-    title: "4. mdoc Storage & Deployment",
+    title: "4. Storage & Selective Disclosure",
     actor: "Wallet",
     description:
-      "The wallet receives the signed mdoc package containing the raw attribute statements, digests, and Issuer signature. It stores this cryptographically bound credential locally, ready for offline verification by readers (police, car hire, etc.) via BLE, NFC, or QR.",
+      "The wallet receives the signed mdoc container. When presenting the driving licence, the wallet performs Selective Disclosure: sharing only requested fields and their corresponding entropy random salts, allowing the reader to verify authenticity offline without disclosing other personal data.",
     technicalDetails: {
-      title: "Decoded mdoc Structure (ISO/IEC 18013-5 namespaces)",
-      payload: `{
-  "org.iso.18013.5.1": {
-    "given_name": "Nathan",
-    "family_name": "Shoemark",
-    "birth_date": "1990-07-15",
-    "issue_date": "2026-01-10",
-    "expiry_date": "2036-01-10",
-    "document_number": "SHOEY9081249A",
-    "portrait": "h'ffd8ffe0...'" // Raw image byte array
-  }
+      title: "Decoded IssuerSignedItem (CBOR Map)",
+      payload: `// Structure of a single presented claim
+{
+  "digestID": 42,             // Shuffled index to prevent linkability
+  "random": h'9a4f6c3d...',   // 16-byte entropy salt (brute-force defense)
+  "elementIdentifier": "age_over_18",
+  "elementValue": true        // Boolean confirmation of age threshold
 }`,
     },
   },

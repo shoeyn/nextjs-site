@@ -29,7 +29,7 @@ export default function Navigation() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo / Branding */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link href="/" className="group flex items-center gap-2.5">
               <Logo />
               <div className="flex flex-col">

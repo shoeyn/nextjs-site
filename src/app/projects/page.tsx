@@ -17,12 +17,12 @@ export default function ProjectsPage() {
         "Handled peak loads of 15,000 requests/sec, reduced cloud operational costs by 60% compared to ECS-based container alternatives, and guaranteed at-least-once message delivery protocols.",
     },
     {
-      title: "Modular Rails CMS Core",
-      tech: ["Ruby on Rails", "PostgreSQL", "Redis", "Tailwind CSS"],
+      title: "Cyber Freakz Enterprise Suite",
+      tech: ["PHP", "JavaScript", "Node.js", "Electron", "PostgreSQL"],
       description:
-        "An open-source core module for Rails applications that automates server-side accessibility checks (WCAG 2.1 compliance) and provides dynamic responsive image pipelines with instant WebP conversions.",
+        "Maintained complete end-to-end lifecycle ownership of cross-platform desktop suites and web applications for medium-sized business clients. Designed and built internal tools using Electron to automate business discovery workflows.",
       impact:
-        "Deployed across multiple corporate marketing environments, decreasing initial load times by 35% and improving lighthouse accessibility scores to a perfect 100/100.",
+        "Successfully turned client business use cases into production-ready portals, automating internal document ingestion pipelines and cutting manual workflow processing delays by 40%.",
     },
   ];
 
@@ -35,7 +35,7 @@ export default function ProjectsPage() {
         </span>
         <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl dark:text-zinc-50">
           Technical Projects & <br />
-          <span className="from-accent-primary to-accent-info bg-gradient-to-r bg-clip-text text-transparent">
+          <span className="from-accent-primary to-accent-info bg-linear-to-r bg-clip-text text-transparent">
             Case Studies
           </span>
         </h1>
@@ -79,39 +79,49 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-1 gap-8 text-sm lg:grid-cols-3">
             <div className="space-y-4 leading-relaxed text-slate-600 lg:col-span-2 dark:text-zinc-400">
               <p>
-                The `mdoc-builder` is an open-source library built in
-                collaboration with key government departments. It provides the
-                core cryptographic mechanisms to package, structure, and issue
-                Mobile Driving Licences (mDL) that adhere strictly to the
-                **ISO/IEC 18013-5** international standard.
+                The `mdoc-builder` is an open-source Java library built in
+                collaboration with GDS and key government departments. It
+                provides the core cryptographic mechanisms to package, sign, and
+                issue compliant Mobile Driving Licences (mDL) that adhere
+                strictly to the **ISO/IEC 18013-5** international standard.
               </p>
               <p>
-                In digital identity, privacy is paramount. By utilizing CBOR
-                (Concise Binary Object Representation) namespaces and COSE (CBOR
-                Object Signing and Encryption) cryptography, this library allows
-                driver attributes (e.g. name, date of birth, license categories)
-                to be divided into individual digests. When presenting the
-                driving licence, holders can choose to share only specific
-                attributes (e.g. proving they are over 18 without disclosing
-                their full name or exact birthdate). This is known as
-                **Selective Disclosure**.
+                Applying strong technical judgement to match both DVLA and GDS
+                needs against a rapidly evolving ISO standard, I chose to design
+                this library from scratch with minimal external dependencies.
+                This avoided hacky integrations of incomplete third-party
+                packages, producing a lightweight, secure, and easily extendable
+                core. To ensure maintenance standards, I personally configured
+                SonarQube, Checkstyle, and security vulnerability checks inside
+                CI/CD deployment pipelines.
+              </p>
+              <p>
+                In digital identity, privacy is paramount. Using CBOR (Concise
+                Binary Object Representation) namespaces and COSE (CBOR Object
+                Signing and Encryption) cryptography, this library allows driver
+                attributes to be divided into individual digests, enabling
+                **Selective Disclosure** (proving you are over 18 without
+                disclosing your full name or exact birthdate).
               </p>
               <h4 className="font-bold text-slate-800 dark:text-zinc-200">
                 Key Engineering Contributions:
               </h4>
               <ul className="list-disc space-y-1 pl-5">
                 <li>
-                  Designed compliance validation helpers to check structure
-                  sizes for low-bandwidth NFC/Bluetooth LE exchanges.
+                  Personally designed and developed the core mdoc-builder Java
+                  library from scratch.
                 </li>
                 <li>
-                  Created helper interfaces to cryptographically bind driving
-                  licences to device hardware-backed keys, preventing credential
-                  clone cloning.
+                  Created cryptographic signing interfaces to securely bind
+                  driving credentials to mobile device hardware keys.
                 </li>
                 <li>
-                  Developed automated test suites checking MSO signature
-                  verifications against multiple root certificate structures.
+                  Integrated SonarQube, Checkstyle, and Tenable vulnerability
+                  checks within CI/CD pipelines to guarantee code compliance.
+                </li>
+                <li>
+                  Built local containerized Kubernetes replica environments
+                  using Docker for simplified squad testing.
                 </li>
               </ul>
             </div>
@@ -122,13 +132,14 @@ export default function ProjectsPage() {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Go",
-                  "TypeScript",
-                  "CBOR",
-                  "COSE/RFC8152",
-                  "ECDSA P-256",
-                  "OIDC4VCI",
-                  "Node.js",
+                  "Java",
+                  "Spring Boot",
+                  "OpenAPI",
+                  "CBOR / COSE",
+                  "ISO/IEC 18013-5",
+                  "SonarQube / Checkstyle",
+                  "Docker / K8s",
+                  "Tenable / Renovate",
                 ].map((t) => (
                   <span
                     key={t}
@@ -205,6 +216,187 @@ export default function ProjectsPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ISO/IEC 18013-5 Spec Deep Dive */}
+      <section className="space-y-8 border-t border-slate-200/50 pt-12 dark:border-zinc-800/50">
+        <div className="max-w-3xl space-y-4">
+          <span className="badge-pastel border-accent-secondary/20 text-accent-secondary bg-accent-secondary/5 px-3 py-1 text-[10px] tracking-widest uppercase">
+            Standards & Protocol Deep-Dive
+          </span>
+          <h2 className="font-display text-2xl leading-tight font-bold text-slate-900 sm:text-3xl dark:text-zinc-50">
+            Inside the ISO/IEC 18013-5 Spec
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-600 md:text-base dark:text-zinc-400">
+            Mobile driving licences (mDLs) are not simply digital images or
+            signed PDFs. They are highly structured, cryptographically
+            verifiable data envelopes designed to protect user privacy and
+            establish undeniable authenticity. Here is how the data structures
+            inside `mdoc-builder` are composed.
+          </p>
+        </div>
+
+        {/* Bento Grid layout for Spec Breakdown */}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {/* Card 1: Document Structure (IssuerSigned vs DeviceSigned) */}
+          <div className="glass-card flex flex-col justify-between rounded-xl border border-slate-200/60 p-6 lg:col-span-2 dark:border-zinc-800/60">
+            <div className="space-y-3">
+              <h3 className="font-display flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-zinc-100">
+                <span className="text-accent-primary font-mono text-sm">
+                  [01]
+                </span>
+                Dual Envelope Architecture
+              </h3>
+              <p className="text-xs leading-relaxed text-slate-600 sm:text-sm dark:text-zinc-400">
+                An mdoc contains two distinct cryptographic envelopes that
+                separate the Authority's claim signature from the Holder's
+                device authentication.
+              </p>
+              <div className="grid grid-cols-1 gap-4 pt-2 md:grid-cols-2">
+                <div className="space-y-1.5 rounded-lg border border-slate-200/40 bg-slate-100/50 p-4 dark:border-zinc-800/40 dark:bg-zinc-900/50">
+                  <span className="text-accent-primary text-[10px] font-bold tracking-wider uppercase">
+                    IssuerSigned
+                  </span>
+                  <p className="text-xs text-slate-600 dark:text-zinc-400">
+                    Contains raw user claims (e.g. given name, portrait) grouped
+                    by namespace. Each claim is encoded as an individual{" "}
+                    <strong>IssuerSignedItem</strong> along with a salt. Hashes
+                    of these items are stored in a signed Mobile Security Object
+                    (MSO).
+                  </p>
+                </div>
+                <div className="space-y-1.5 rounded-lg border border-slate-200/40 bg-slate-100/50 p-4 dark:border-zinc-800/40 dark:bg-zinc-900/50">
+                  <span className="text-accent-secondary text-[10px] font-bold tracking-wider uppercase">
+                    DeviceSigned
+                  </span>
+                  <p className="text-xs text-slate-600 dark:text-zinc-400">
+                    Contains a dynamic signature generated on-device using a
+                    private key locked in the hardware's Secure Enclave. This
+                    proves that the person presenting the mDL is the actual
+                    holder, preventing clone attacks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: Entropy Salting & Anti-Correlation */}
+          <div className="glass-card flex flex-col justify-between rounded-xl border border-slate-200/60 p-6 dark:border-zinc-800/60">
+            <div className="space-y-3">
+              <h3 className="font-display flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-zinc-100">
+                <span className="text-accent-secondary font-mono text-sm">
+                  [02]
+                </span>
+                Anti-Correlation
+              </h3>
+              <p className="text-xs leading-relaxed text-slate-600 dark:text-zinc-400">
+                To guarantee user privacy, the spec enforces safeguards against
+                correlation (tracking a user across multiple verifiers) and
+                dictionary attacks:
+              </p>
+              <ul className="space-y-2 text-xs text-slate-600 dark:text-zinc-400">
+                <li className="flex gap-1.5">
+                  <span className="text-accent-secondary font-bold">•</span>
+                  <span>
+                    <strong>16-Byte Random Salt:</strong> Every claim includes a
+                    minimum 16-byte random salt. Without it, public fields
+                    (e.g., given_name = "Joe") could be resolved by verifiers
+                    running offline hash tables.
+                  </span>
+                </li>
+                <li className="flex gap-1.5">
+                  <span className="text-accent-secondary font-bold">•</span>
+                  <span>
+                    <strong>Digest ID Shuffling:</strong> Claims are assigned
+                    unique `digestID` integers. In `mdoc-builder`, we generate
+                    and randomly shuffle these IDs to eliminate any coding
+                    sequence correlation.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Card 3: Standard Namespaces Table */}
+          <div className="glass-card flex flex-col justify-between rounded-xl border border-slate-200/60 p-6 dark:border-zinc-800/60">
+            <div className="space-y-3">
+              <h3 className="font-display flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-zinc-100">
+                <span className="text-accent-success font-mono text-sm">
+                  [03]
+                </span>
+                Namespace Mapping
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-zinc-400">
+                Attributes are organized in namespaces to isolate standard data
+                fields from regional or regional authority extensions:
+              </p>
+              <div className="space-y-3 pt-1">
+                <div className="space-y-1">
+                  <span className="text-accent-success bg-accent-success/5 border-accent-success/15 rounded-md border px-1.5 py-0.5 font-mono text-[10px] font-bold">
+                    org.iso.18013.5.1
+                  </span>
+                  <p className="text-[11px] text-slate-500 dark:text-zinc-400">
+                    Standard mDL attributes: given_name, family_name,
+                    birth_date, portrait, issuing_authority, document_number,
+                    un_distinguishing_sign.
+                  </p>
+                </div>
+                <div className="space-y-1 border-t border-slate-100 pt-2 dark:border-zinc-900">
+                  <span className="text-accent-info bg-accent-info/5 border-accent-info/15 rounded-md border px-1.5 py-0.5 font-mono text-[10px] font-bold">
+                    org.iso.18013.5.1.GB
+                  </span>
+                  <p className="text-[11px] text-slate-500 dark:text-zinc-400">
+                    British DVLA extensions: provisional_driving_privileges,
+                    title, welsh_licence (bilingual flag).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4: Verification Lifecycle */}
+          <div className="glass-card flex flex-col justify-between rounded-xl border border-slate-200/60 p-6 lg:col-span-2 dark:border-zinc-800/60">
+            <div className="space-y-3">
+              <h3 className="font-display flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-zinc-100">
+                <span className="text-accent-info font-mono text-sm">[04]</span>
+                Verification Loop (Selective Disclosure)
+              </h3>
+              <p className="text-xs leading-relaxed text-slate-600 sm:text-sm dark:text-zinc-400">
+                The verification process requires no connection back to the
+                issuing authority, protecting offline privacy:
+              </p>
+              <div className="grid grid-cols-1 gap-3 pt-1 text-[11px] sm:grid-cols-3">
+                <div className="space-y-1 rounded-lg border border-slate-200/40 bg-slate-100/50 p-3 dark:border-zinc-800/40 dark:bg-zinc-900/50">
+                  <span className="font-bold text-slate-800 dark:text-zinc-200">
+                    1. Selective Present
+                  </span>
+                  <p className="text-slate-500 dark:text-zinc-400">
+                    The mobile wallet sends only the requested elements (e.g.,
+                    portrait, age_over_18) and hides the rest.
+                  </p>
+                </div>
+                <div className="space-y-1 rounded-lg border border-slate-200/40 bg-slate-100/50 p-3 dark:border-zinc-800/40 dark:bg-zinc-900/50">
+                  <span className="font-bold text-slate-800 dark:text-zinc-200">
+                    2. Hash Matching
+                  </span>
+                  <p className="text-slate-500 dark:text-zinc-400">
+                    The verifier hashes the received items. If they match the
+                    digests stored in the MSO, data integrity is proven.
+                  </p>
+                </div>
+                <div className="space-y-1 rounded-lg border border-slate-200/40 bg-slate-100/50 p-3 dark:border-zinc-800/40 dark:bg-zinc-900/50">
+                  <span className="font-bold text-slate-800 dark:text-zinc-200">
+                    3. Authentication
+                  </span>
+                  <p className="text-slate-500 dark:text-zinc-400">
+                    The verifier validates the Issuer's signature on the MSO,
+                    and the Device's signature using the MSO's public key.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

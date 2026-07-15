@@ -31,7 +31,7 @@ export default function BlogIndexPage() {
         </span>
         <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl dark:text-zinc-50">
           Articles & <br />
-          <span className="from-accent-primary to-accent-secondary bg-gradient-to-r bg-clip-text text-transparent">
+          <span className="from-accent-primary to-accent-secondary bg-linear-to-r bg-clip-text text-transparent">
             Insights
           </span>
         </h1>

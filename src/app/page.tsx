@@ -5,18 +5,28 @@ export default function Home() {
   const skills = [
     {
       category: "Languages",
-      items: ["Ruby", "Go", "Java", "TypeScript", "SQL", "HTML/CSS"],
+      items: [
+        "Java",
+        "Ruby",
+        "Go",
+        "TypeScript",
+        "PHP",
+        "JavaScript",
+        "SQL",
+        "HTML/CSS",
+      ],
       color: "border-accent-primary/20 text-accent-primary bg-accent-primary/5",
     },
     {
       category: "Frameworks & Tech",
       items: [
-        "Ruby on Rails",
         "Spring Boot",
-        "Next.js",
-        "React",
-        "Serverless",
+        "Ruby on Rails",
         "Node.js",
+        "Electron",
+        "React",
+        "Next.js",
+        "Serverless",
       ],
       color:
         "border-accent-secondary/20 text-accent-secondary bg-accent-secondary/5",
@@ -24,23 +34,24 @@ export default function Home() {
     {
       category: "Cloud & Architecture",
       items: [
-        "AWS (Lambda, ECS, RDS)",
+        "AWS (Lambda, S3, SQS)",
+        "Kubernetes",
         "Docker",
-        "CI/CD (Actions)",
-        "Microservices",
         "REST/GraphQL",
         "gRPC",
+        "CI/CD (Actions)",
       ],
       color: "border-accent-success/20 text-accent-success bg-accent-success/5",
     },
     {
-      category: "Security & Standards",
+      category: "Operational Excellence & Security",
       items: [
         "ISO/IEC 18013-5 (mDL)",
-        "PKI & Certificate Signing",
+        "PKI & Cert Signing",
         "COSE / CBOR",
+        "SonarQube / Checkstyle",
+        "Tenable / Renovate",
         "OAuth2 / OIDC",
-        "Cryptography",
       ],
       color: "border-accent-info/20 text-accent-info bg-accent-info/5",
     },
@@ -50,35 +61,25 @@ export default function Home() {
     {
       role: "Senior Software Engineer",
       company: "DVLA (Driver and Vehicle Licensing Agency)",
-      period: "2022 - Present",
+      period: "Sept 2024 - Present",
       description:
-        "Lead developer on core digital identity systems. Heavily involved in the architecture and development of the open-source mdoc-builder ecosystem in partnership with other government departments. Built compliance pipelines for ISO/IEC 18013-5 mobile driving licence security mechanisms.",
+        "Lead developer on core digital identity systems. Collaborating across government organisations to provide a robust identification service and mobile driving licence solution. Built standard-compliant verification and cryptographic provisioning pipelines.",
       achievements: [
-        "Implemented high-security certificate signing, verification, and binding mechanisms for mobile wallets (mDL).",
-        "Designed serverless, highly-available APIs using TypeScript and Go to sign driver credentials at enterprise scale.",
-        "Collaborated on national digital identity standards, ensuring strict privacy and cryptographic integrity protocols.",
+        "Personally developed the mdoc-builder Java library from scratch, maintaining minimal dependencies to produce an efficient and compliant solution for ISO/IEC 18013-5 standards.",
+        "Established Checkstyle, SonarQube, and CI/CD quality gates in deployment pipelines to automate compliance checks and enforce high code standards.",
+        "Maintained and optimized enterprise Kubernetes deployments, packaging local replica development environments with Docker to streamline team workflows.",
       ],
     },
     {
-      role: "Senior Software Engineer",
-      company: "Enterprise Financial Platforms (Staging)",
-      period: "2019 - 2022",
+      role: "Web Application Developer",
+      company: "Cyber Freakz",
+      period: "Sept 2012 - Sept 2024",
       description:
-        "Led a distributed team of engineers to build and migrate legacy transactional databases to event-driven microservices. Utilized Ruby on Rails and Go for high-throughput messaging structures.",
+        "Maintained complete end-to-end lifecycle ownership (discovery, architecture, development, delegation, and deployments) of custom web application suites and desktop utilities for medium-sized businesses.",
       achievements: [
-        "Reduced database locking and query latencies by 45% through optimized index architectures and cache-aside patterns.",
-        "Introduced containerized local development structures with Docker, cutting onboarding time for junior engineers by half.",
-      ],
-    },
-    {
-      role: "Software Engineer",
-      company: "Scalable Web Solutions",
-      period: "2016 - 2019",
-      description:
-        "Developed full-stack web solutions using Ruby on Rails, Java, and modern React frontends. Implemented secure OAuth2 single sign-on flows.",
-      achievements: [
-        "Built responsive, accessible interfaces (WCAG compliant) that served over 1M monthly active users.",
-        "Refactored Spring Boot backend APIs to improve throughput and response times (p99 from 300ms down to 80ms).",
+        "Directly collaborated with client board members and designers to translate business use cases and user needs into production-ready software solutions in PHP, JavaScript, and Node.js/Electron.",
+        "Built modular cross-platform desktop integration systems using Electron, reducing internal document processing and ingestion delays by 40%.",
+        "Owned and directed full-lifecycle deployment pipelines, managing server configurations, database clusters, and secure API gateways.",
       ],
     },
   ];
@@ -88,19 +89,19 @@ export default function Home() {
       {/* Hero Section */}
       <section className="max-w-4xl space-y-6">
         <span className="badge-pastel border-accent-primary/20 text-accent-primary bg-accent-primary/5 px-3 py-1 text-[10px] tracking-widest uppercase">
-          Executive Portfolio
+          Senior Engineering Portfolio
         </span>
         <h1 className="font-display text-4xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl dark:text-zinc-50">
           Engineering Secure, <br />
-          <span className="from-accent-primary via-accent-secondary to-accent-info bg-gradient-to-r bg-clip-text text-transparent">
+          <span className="from-accent-primary via-accent-secondary to-accent-info bg-linear-to-r bg-clip-text text-transparent">
             Enterprise Platforms
           </span>
         </h1>
         <p className="text-lg leading-relaxed font-medium text-slate-600 md:text-xl dark:text-zinc-400">
-          I am a senior software engineer specializing in building
-          high-performance, cryptographically secure backends and serverless
-          architectures. Currently shaping mobile driving licence standards at
-          the DVLA.
+          I am a senior software engineer specializing in high-performance
+          backends, secure digital identity credentials, and robust serverless
+          architectures. Currently collaborating across public organizations to
+          architect mobile driving licence standards at the DVLA.
         </p>
         <div className="flex flex-wrap gap-4 pt-2">
           <Link
@@ -116,6 +117,28 @@ export default function Home() {
             About Me & Story
           </Link>
         </div>
+      </section>
+
+      {/* Key Metric Stats Grid */}
+      <section className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {[
+          { label: "Professional Experience", value: "12+ Years" },
+          { label: "Peak Ingestion Load", value: "15k/sec" },
+          { label: "Cloud Cost Savings", value: "60%" },
+          { label: "Active User Reach", value: "1M+" },
+        ].map((stat, sIdx) => (
+          <div
+            key={sIdx}
+            className="glass-card rounded-xl border border-slate-200/60 p-4 text-center dark:border-zinc-800/60"
+          >
+            <div className="font-display text-accent-primary dark:text-accent-primary text-2xl font-extrabold sm:text-3xl">
+              {stat.value}
+            </div>
+            <div className="mt-1 text-[10px] font-bold tracking-wider text-slate-500 uppercase dark:text-zinc-400">
+              {stat.label}
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* Skills Matrix */}

@@ -18,7 +18,7 @@ export default function AboutPage() {
         </span>
         <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl dark:text-zinc-50">
           Crafting Software, <br />
-          <span className="from-accent-primary to-accent-secondary bg-gradient-to-r bg-clip-text text-transparent">
+          <span className="from-accent-primary to-accent-secondary bg-linear-to-r bg-clip-text text-transparent">
             Leading with Purpose
           </span>
         </h1>
@@ -36,26 +36,28 @@ export default function AboutPage() {
             Professional Narrative
           </h2>
           <p>
-            My engineering journey began with a curiosity for how systems
-            communicate. Over the past decade, that curiosity has grown into a
-            career focused on architecting robust distributed platforms,
-            high-security services, and modern API infrastructures.
+            My engineering journey began with a curiosity for systems
+            integration. Over the past decade, that curiosity has grown into a
+            career focused on architecting secure, high-performance platforms
+            and modern API infrastructures.
           </p>
           <p>
-            Throughout my career, I've worked across diverse industries, from
-            staging high-scale financial platforms to my current role at the
-            **DVLA (Driver and Vehicle Licensing Agency)**. Working in public
-            service, I've had the unique opportunity to build technology that
-            impacts millions of citizens daily. My focus has been on mobile
-            security standards—specifically working with partner agencies to
-            build the core libraries (`mdoc-builder`) powering secure digital
-            identity mechanisms.
+            For twelve years (2012–2024), I worked as a Web Application
+            Developer at **Cyber Freakz**, where I maintained complete lifecycle
+            responsibility (from initial business discovery to deployment and
+            operations) for custom application suites. In late 2024, I
+            transitioned to public service as a **Senior Software Engineer at
+            the DVLA**. Collaborating closely with partner agencies (such as
+            GDS), I've designed and built the core cryptography and security
+            libraries (`mdoc-builder`) powering secure digital identity
+            mechanisms for citizens.
           </p>
           <p>
-            I specialize in serverless, event-driven backends, and full-stack
-            development, with active competencies in **Ruby on Rails, Go, Java,
-            and TypeScript**. I believe in selecting the right tool for the job,
-            rather than adhering dogmatically to a single framework.
+            Currently, I specialize in Java-based systems—ranging from
+            lightweight, zero-dependency utility packages to Spring Boot web
+            applications. I remain active across multiple programming languages,
+            regularly contributing to **Ruby on Rails, Go, and
+            TypeScript/Next.js** codebases.
           </p>
         </div>
 
@@ -68,25 +70,25 @@ export default function AboutPage() {
             <li className="flex gap-2">
               <span className="text-accent-primary font-bold">✓</span>
               <span>
-                <strong>Security by Design:</strong> Especially critical in
-                government applications. Cryptographic integrity and privacy
-                must be foundational, not retrofitted.
+                <strong>Quality Gates & Security:</strong> Enforcing checkstyle,
+                SonarQube, and automated dependency upgrades (Renovate/Tenable)
+                inside pipelines to guarantee secure delivery.
               </span>
             </li>
             <li className="flex gap-2">
               <span className="text-accent-primary font-bold">✓</span>
               <span>
-                <strong>Design Simplicity:</strong> Senior engineering is about
-                removing complexity, not introducing it. Simple code is
-                readable, testable, and maintainable.
+                <strong>Technical Judgement:</strong> Prioritizing
+                minimal-dependency, clean libraries over bloated integrations,
+                ensuring high readability and compliance.
               </span>
             </li>
             <li className="flex gap-2">
               <span className="text-accent-primary font-bold">✓</span>
               <span>
-                <strong>Mentorship & Culture:</strong> Building a healthy
-                engineering culture is just as important as writing software. I
-                prioritize mentoring junior colleagues.
+                <strong>User & BA Alignment:</strong> Collaborating closely with
+                Business Analysts and Product leads to map system designs
+                against actual user behaviors.
               </span>
             </li>
           </ul>
@@ -102,7 +104,7 @@ export default function AboutPage() {
         <div className="relative flex justify-center md:col-span-2">
           <div className="group relative max-w-xs md:max-w-none">
             {/* Glow effect on hover in dark mode */}
-            <div className="from-accent-primary to-accent-secondary absolute inset-0 rounded-2xl bg-gradient-to-r opacity-25 blur-lg transition-opacity duration-500 group-hover:opacity-40" />
+            <div className="from-accent-primary to-accent-secondary absolute inset-0 rounded-2xl bg-linear-to-r opacity-25 blur-lg transition-opacity duration-500 group-hover:opacity-40" />
             <Image
               src={profilePic}
               alt="Nathan Shoemark and child"
@@ -122,23 +124,28 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-3 text-sm leading-relaxed text-slate-600 md:text-base dark:text-zinc-400">
             <p>
-              When I'm not tracing API endpoints or aligning cryptographic
-              digests, my time belongs to my family. As a husband and father,
-              parenting is a core pillar of who I am.
+              When I'm not writing Java APIs or aligning cryptographic
+              envelopes, my time belongs to my family. As a husband and father,
+              parenting is a core pillar of who I am. I believe the values
+              required to raise a family—patience, continuous learning, and
+              thinking 10 years ahead—are the exact same traits that define
+              senior engineering leadership.
             </p>
             <p>
-              Parenthood has had a profound impact on my approach to engineering
-              leadership. Explaining complex tech concepts to a child is the
-              ultimate test of understanding, a skill that translates directly
-              to distilling technical architecture to non-technical business
-              leaders.
+              In squad leadership, I focus heavily on mentoring and nurturing
+              the want to grow. A notable milestone was working closely with a
+              junior developer on my team, coaching them through complex
+              architectures and code reviews, and watching their technical
+              confidence flourish. I helped guide them along their path, and
+              they eventually progressed to a Senior Software Engineer who now
+              continuously contributes key libraries back to the organization.
             </p>
             <p>
-              Parenthood requires patience, continuous learning, and thinking 10
-              years ahead rather than just for tomorrow. I bring these same
-              qualities to work every day: designing stable long-term software
-              architecture, supporting teams, and writing systems that stand the
-              test of time.
+              This philosophy of understanding extends to modern toolsets: I
+              maintain a responsible balance with AI. I leverage AI agents for
+              boilerplate and fast exploration, but advocate for complete,
+              self-reliant technical comprehension of any code committed to
+              production.
             </p>
           </div>
           <div className="pt-2">
