@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 
 const getColour = (randomizer = Math.random) => {
@@ -9,7 +9,7 @@ const getColour = (randomizer = Math.random) => {
     "hover:border-theme4!",
   ];
   return classes[Math.floor(randomizer() * classes.length)];
-}
+};
 
 export function Bento({
   className,
@@ -20,7 +20,7 @@ export function Bento({
   children: React.ReactNode;
   randomizer?: () => number;
 }>) {
-  const [colour] = useState(getColour(randomizer))
+  const [colour] = useState(getColour(randomizer));
 
   let outClass = "";
   if (className) {

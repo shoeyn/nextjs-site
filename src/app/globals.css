@@ -1,85 +1,124 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
-  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-  --background-image-gradient-conic: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--tw-gradient-stops)
-  );
-  --background-image-theme-gradient: radial-gradient(
-    at bottom left,
-    rgba(146, 0, 255, 0.3) 0%,
-    rgba(110, 30, 255, 0.2) 29%,
-    rgba(9, 114, 255, 0.4) 60%,
-    rgba(75, 0, 255, 0.3) 100%
-  );
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-outfit), sans-serif;
 
-  --color-theme1: #9200ff;
-  --color-theme2: #6e1eff;
-  --color-theme3: #0972ff;
-  --color-theme4: #4b00ff;
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-success: var(--accent-success);
+  --color-accent-info: var(--accent-info);
+  --color-accent-muted: var(--accent-muted);
+
+  --color-bg-main: var(--bg-main);
+  --color-text-main: var(--text-main);
+  --color-border-main: var(--border-main);
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+@variant dark (&:where(.dark, .dark *));
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+  :root {
+    --font-inter: "Inter";
+    --font-outfit: "Outfit";
+
+    /* Light Mode Palette: Slate base with soft pastel highlights */
+    --bg-main: #f8fafc; /* Slate 50 */
+    --text-main: #0f172a; /* Slate 900 */
+    --border-main: #e2e8f0; /* Slate 200 */
+
+    --accent-primary: #818cf8; /* Soft Indigo */
+    --accent-secondary: #c084fc; /* Soft Lavender */
+    --accent-success: #34d399; /* Soft Mint */
+    --accent-info: #38bdf8; /* Soft Sky */
+    --accent-muted: #e2e8f0; /* Slate 200 */
+
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(226, 232, 240, 0.8);
+    --card-shadow:
+      0 4px 20px -2px rgba(148, 163, 184, 0.12),
+      0 2px 8px -1px rgba(148, 163, 184, 0.08);
+  }
+
+  .dark {
+    /* Dark Mode Palette: Zinc/Deep Slate base with vibrant neon highlights */
+    --bg-main: #09090b; /* Zinc 950 */
+    --text-main: #f4f4f5; /* Zinc 100 */
+    --border-main: #27272a; /* Zinc 800 */
+
+    --accent-primary: #a855f7; /* Neon Violet */
+    --accent-secondary: #ec4899; /* Neon Pink */
+    --accent-success: #10b981; /* Neon Emerald */
+    --accent-info: #06b6d4; /* Neon Cyan */
+    --accent-muted: #1e293b; /* Slate 800 */
+
+    --card-bg: rgba(15, 15, 18, 0.6);
+    --card-border: rgba(39, 39, 42, 0.7);
+    --card-shadow:
+      0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(255, 255, 255, 0.03);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 }
 
-html,
-body {
-  height: 100%;
+/* Premium UI Utilities */
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-h1 {
-  @apply text-4xl font-semibold;
+.glass-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.05),
+    var(--card-shadow);
 }
 
-h2 {
-  @apply text-2xl tracking-wide;
+.dark .glass-card:hover {
+  box-shadow:
+    0 0 20px -5px rgba(168, 85, 247, 0.15),
+    var(--card-shadow);
 }
 
-h3 {
-  @apply text-lg font-thin;
+/* Accent Glow Badges */
+.badge-pastel {
+  @apply rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors;
 }
 
-body {
-  @apply bg-theme-gradient;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-.glass {
-  @apply transition duration-300 ease-in-out;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.personal-info svg {
-  height: 16px;
-}
-
-.personal-info a {
-  @apply p-2;
-}
-
-.button {
-  @apply bg-theme-gradient mt-4 inline-block rounded-sm px-4 py-2 font-semibold tracking-wider uppercase lg:mt-8;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+/* Prose customizations */
+.prose {
+  --tw-prose-body: var(--text-main);
+  --tw-prose-headings: var(--text-main);
+  --tw-prose-links: var(--accent-primary);
+  --tw-prose-bold: var(--text-main);
 }

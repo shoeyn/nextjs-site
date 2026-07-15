@@ -1,4 +1,11 @@
+allowBuilds:
+  sharp: true
 onlyBuiltDependencies:
   - "@tailwindcss/oxide"
   - sharp
   - unrs-resolver
+overrides:
+  "postcss": "^8.5.10"
+updateConfig:
+  ignoreDependencies:
+    - "@types/node"
