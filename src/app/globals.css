@@ -2,8 +2,9 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: var(--font-inter), sans-serif;
-  --font-display: var(--font-outfit), sans-serif;
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font-display: var(--font-geist-sans), sans-serif;
 
   --color-accent-primary: var(--accent-primary);
   --color-accent-secondary: var(--accent-secondary);
@@ -20,8 +21,8 @@
 
 @layer base {
   :root {
-    --font-inter: "Inter";
-    --font-outfit: "Outfit";
+    --font-geist-sans: "Geist";
+    --font-geist-mono: "Geist Mono";
 
     /* Light Mode Palette: Slate base with soft pastel highlights */
     --bg-main: #f8fafc; /* Slate 50 */
@@ -59,14 +60,11 @@
       0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(255, 255, 255, 0.03);
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     background-color: var(--bg-main);
     color: var(--text-main);
     font-family: var(--font-sans);
+    line-height: 1.6;
     transition:
       background-color 0.3s ease,
       color 0.3s ease,
@@ -83,6 +81,7 @@
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: -0.02em;
+    line-height: 1.15;
   }
 }
 
@@ -112,7 +111,7 @@
 
 /* Accent Glow Badges */
 .badge-pastel {
-  @apply rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors;
+  @apply mb-3 inline-block rounded-full border px-2.5 py-1 text-xs font-semibold transition-colors;
 }
 
 /* Prose customizations */

@@ -84,7 +84,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="space-y-12 md:space-y-16">
+    <div className="mt-2 space-y-12 md:mt-4 md:space-y-16">
       {/* Hero Section */}
       <section className="max-w-4xl space-y-6">
         <span className="badge-pastel border-accent-primary/20 text-accent-primary bg-accent-primary/5 px-3 py-1 text-[10px] tracking-widest uppercase">

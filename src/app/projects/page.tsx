@@ -27,9 +27,9 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="mt-2 space-y-12 md:mt-4">
       {/* Page Header */}
-      <section className="max-w-3xl space-y-4">
+      <section className="max-w-3xl space-y-6">
         <span className="badge-pastel border-accent-info/20 text-accent-info bg-accent-info/5 px-3 py-1 text-[10px] tracking-widest uppercase">
           Engineering Showcase
         </span>

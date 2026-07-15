@@ -62,7 +62,7 @@ export default function Navigation() {
               </Link>
             ))}
 
-            <div className="h-6 border-l border-slate-200 pl-4 dark:border-zinc-800">
+            <div className="flex h-6 items-center border-l border-slate-200 pl-4 dark:border-zinc-800">
               <ThemeToggle />
             </div>
           </div>

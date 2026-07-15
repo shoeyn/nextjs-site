@@ -10,9 +10,9 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="space-y-12">
+    <div className="mt-2 space-y-12 md:mt-4">
       {/* Intro Hero Section */}
-      <section className="max-w-3xl space-y-4">
+      <section className="max-w-3xl space-y-6">
         <span className="badge-pastel border-accent-secondary/20 text-accent-secondary bg-accent-secondary/5 px-3 py-1 text-[10px] tracking-widest uppercase">
           My Story & Values
         </span>

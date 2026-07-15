@@ -34,7 +34,7 @@ export function ThemeToggle() {
       {theme === "dark" ? (
         // Sun Icon
         <svg
-          className="fill-accent-primary h-5 w-5 animate-pulse"
+          className="fill-accent-primary h-5 w-5"
           viewBox="0 0 20 20"
           fill="currentColor"
         >

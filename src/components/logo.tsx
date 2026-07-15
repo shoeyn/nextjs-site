@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CASE_VARIATIONS = ["ns", "Ns", "nS", "NS"];
 const GLITCH_CHARS = [
@@ -25,38 +25,41 @@ export function Logo() {
   const [text, setText] = useState("ns");
   const [isGlitching, setIsGlitching] = useState(false);
 
+  // Keep a ref of current text to avoid interval closure staleness and React concurrent state racing
+  const textRef = useRef(text);
+  useEffect(() => {
+    textRef.current = text;
+  }, [text]);
+
   useEffect(() => {
     const triggerGlitch = () => {
       setIsGlitching(true);
       let step = 0;
       const totalSteps = 5;
 
-      setText((current) => {
-        const pool = CASE_VARIATIONS.filter((v) => v !== current);
-        const target = pool[Math.floor(Math.random() * pool.length)] || "ns";
+      const current = textRef.current;
+      const pool = CASE_VARIATIONS.filter((v) => v !== current);
+      const target = pool[Math.floor(Math.random() * pool.length)] || "ns";
 
-        const glitchInterval = setInterval(() => {
-          step++;
-          if (step >= totalSteps) {
-            clearInterval(glitchInterval);
-            setText(target);
-            setIsGlitching(false);
-          } else {
-            // Generate a random 2-character glitch text using narrow monospace symbols
-            const c1 =
-              Math.random() > 0.4
-                ? GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
-                : target[0];
-            const c2 =
-              Math.random() > 0.4
-                ? GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
-                : target[1];
-            setText(c1 + c2);
-          }
-        }, 45); // 45ms per step, total ~225ms
-
-        return current;
-      });
+      const glitchInterval = setInterval(() => {
+        step++;
+        if (step >= totalSteps) {
+          clearInterval(glitchInterval);
+          setText(target);
+          setIsGlitching(false);
+        } else {
+          // Generate a random 2-character glitch text using narrow monospace symbols
+          const c1 =
+            Math.random() > 0.4
+              ? GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
+              : target[0];
+          const c2 =
+            Math.random() > 0.4
+              ? GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
+              : target[1];
+          setText(c1 + c2);
+        }
+      }, 45); // 45ms per step, total ~225ms
     };
 
     const interval = setInterval(triggerGlitch, 5000);
@@ -86,7 +89,7 @@ export function Logo() {
             animation: text-glitch 0.2s infinite;
           }
           .logo-underline {
-            animation: logo-blink 1.4s infinite ease-in-out;
+            animation: logo-blink 1.0s infinite ease-in-out;
           }
           .stop-start {
             stop-color: #6366f1;
@@ -95,8 +98,9 @@ export function Logo() {
             stop-color: #0ea5e9;
           }
           @keyframes logo-blink {
-            0%, 100% { opacity: 0.15; }
-            50% { opacity: 1; }
+            0%, 45% { opacity: 1; }
+            50%, 95% { opacity: 0.15; }
+            100% { opacity: 1; }
           }
           @keyframes text-glitch {
             0% { transform: translate(0) skewX(0); }
@@ -121,13 +125,13 @@ export function Logo() {
       {/* Lowercase Monospace Developer Monogram (Dynamic casing & glitch classes) */}
       <text
         className={`logo-text ${isGlitching ? "glitch-active" : ""}`}
-        x="256"
+        x="268"
         y="380"
-        font-family="'JetBrains Mono', 'Fira Code', 'Segoe UI Mono', Consolas, Menlo, Monaco, monospace"
-        font-size="410"
-        font-weight="normal"
-        letter-spacing="-10"
-        text-anchor="middle"
+        fontFamily="'JetBrains Mono', 'Fira Code', 'Segoe UI Mono', Consolas, Menlo, Monaco, monospace"
+        fontSize="410"
+        fontWeight="normal"
+        letterSpacing="-10"
+        textAnchor="middle"
       >
         {text}
       </text>
@@ -136,9 +140,9 @@ export function Logo() {
       <rect
         className="logo-underline"
         fill="url(#logo-grad)"
-        x="48"
+        x="20"
         y="430"
-        width="416"
+        width="472"
         height="28"
         rx="14"
       />
