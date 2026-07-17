@@ -22,6 +22,8 @@ export default function Home() {
       items: [
         "Spring Boot",
         "Ruby on Rails",
+        "Laravel",
+        "Vue.js",
         "Node.js",
         "Electron",
         "React",
@@ -49,6 +51,7 @@ export default function Home() {
         "ISO/IEC 18013-5 (mDL)",
         "PKI & Cert Signing",
         "COSE / CBOR",
+        "Cyber Essentials Certification",
         "SonarQube / Checkstyle",
         "Tenable / Renovate",
         "OAuth2 / OIDC",
@@ -75,11 +78,12 @@ export default function Home() {
       company: "Cyber Freakz",
       period: "Sept 2012 - Sept 2024",
       description:
-        "Maintained complete end-to-end lifecycle ownership (discovery, architecture, development, delegation, and deployments) of custom web application suites and desktop utilities for medium-sized businesses.",
+        "Maintained complete end-to-end lifecycle ownership (discovery, architecture, development, delegation, and deployments) of custom web application suites, server infrastructures, and desktop utilities for medium-sized businesses.",
       achievements: [
-        "Directly collaborated with client board members and designers to translate business use cases and user needs into production-ready software solutions in PHP, JavaScript, and Node.js/Electron.",
+        "Designed and developed 20+ custom Laravel-based mission-critical web applications, supporting client operations and driving over £1M in annual gross transaction volume.",
         "Built modular cross-platform desktop integration systems using Electron, reducing internal document processing and ingestion delays by 40%.",
-        "Owned and directed full-lifecycle deployment pipelines, managing server configurations, database clusters, and secure API gateways.",
+        "Managed Windows/Linux servers, cPanel/CentOS VPS deployment environments, and secure API gateways, ensuring 99.9% system availability.",
+        "Directly collaborated with client board members and external designers to align software products with user needs and business visions.",
       ],
     },
   ];

@@ -42,10 +42,13 @@ export default function AboutPage() {
             and modern API infrastructures.
           </p>
           <p>
-            For twelve years (2012–2024), I worked as a Web Application
-            Developer at **Cyber Freakz**, where I maintained complete lifecycle
-            responsibility (from initial business discovery to deployment and
-            operations) for custom application suites. In late 2024, I
+            For twelve years (2012–2024), I worked at **Cyber Freakz**—initially
+            as a System Administrator managing critical Windows/Linux server
+            infrastructures and VPS environments, and progressing to a Lead Web
+            Application Developer. In these roles, I maintained complete
+            lifecycle responsibility (from initial business discovery to
+            deployment and operations) for custom application suites, designing
+            and building over 20 mission-critical applications. In late 2024, I
             transitioned to public service as a **Senior Software Engineer at
             the DVLA**. Collaborating closely with partner agencies (such as
             GDS), I've designed and built the core cryptography and security
@@ -129,10 +132,11 @@ export default function AboutPage() {
           <div className="space-y-3 text-sm leading-relaxed text-slate-600 md:text-base dark:text-zinc-400">
             <p>
               When I'm not writing Java APIs or aligning cryptographic
-              envelopes, my time belongs to my family. As a husband and father,
-              parenting is a core pillar of who I am. I believe the values
-              required to raise a family—patience, continuous learning, and
-              thinking 10 years ahead—are the exact same traits that define
+              envelopes, my time belongs to my family. As a husband, father to
+              an active toddler, and owner of an equally energetic border
+              collie, family life is a core pillar of who I am. I believe the
+              values required to raise a family—patience, continuous learning,
+              and thinking 10 years ahead—are the exact same traits that define
               senior engineering leadership.
             </p>
             <p>

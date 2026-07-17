@@ -17,12 +17,28 @@ export default function ProjectsPage() {
         "Handled peak loads of 15,000 requests/sec, reduced cloud operational costs by 60% compared to ECS-based container alternatives, and guaranteed at-least-once message delivery protocols.",
     },
     {
-      title: "Cyber Freakz Enterprise Suite",
-      tech: ["PHP", "JavaScript", "Node.js", "Electron", "PostgreSQL"],
+      title: "Commercial Management System (CMS)",
+      tech: ["Electron", "Node.js", "TypeScript", "Vue.js", "Serial I/O"],
       description:
-        "Maintained complete end-to-end lifecycle ownership of cross-platform desktop suites and web applications for medium-sized business clients. Designed and built internal tools using Electron to automate business discovery workflows.",
+        "Designed and built an Electron-based desktop application integrating a Vue frontend with a Node.js/TypeScript backend. The system handles full business operations including customer accounts, stock management, and serial communication to interface with and control physical devices over Serial I/O.",
       impact:
-        "Successfully turned client business use cases into production-ready portals, automating internal document ingestion pipelines and cutting manual workflow processing delays by 40%.",
+        "Successfully deployed and live across 50+ individual business locations in collaboration with a primary industry partner, with ongoing feature development.",
+    },
+    {
+      title: "Custom E-commerce Platform",
+      tech: ["Laravel", "PHP", "HTML5", "jQuery", "Payments APIs"],
+      description:
+        "Developed and maintained a custom, pixel-perfect e-commerce platform built on Laravel with an HTML and jQuery frontend. Worked closely with external designers to translate designs into high-converting layouts, integrating Stripe, PayPal, and Worldpay payment gateways.",
+      impact:
+        "Supported the platform continuously for over 10 years, scaling to process over £1 million in annual gross revenue.",
+    },
+    {
+      title: "Legacy System Modernization",
+      tech: ["PHP 8", "MySQL", "CentOS Linux", "cPanel VPS"],
+      description:
+        "Led the comprehensive modernization of a legacy custom PHP 5 application responsible for managing the entirety of a client's business operations. Refactored the codebase for compatibility with PHP 8, patched all known security issues, and implemented new features.",
+      impact:
+        "Successfully extended the lifespan of a business-critical system, avoiding expensive rewrite costs and improving system security.",
     },
   ];
 
