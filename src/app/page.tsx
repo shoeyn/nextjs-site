@@ -198,7 +198,7 @@ export default function Home() {
             A history of architectural leadership and product delivery.
           </p>
         </div>
-        <div className="relative space-y-8 before:absolute before:inset-0 before:left-4 before:h-full before:w-[2px] before:bg-slate-200 dark:before:bg-zinc-800">
+        <div className="relative space-y-8 before:absolute before:inset-0 before:left-4 before:h-full before:w-0.5 before:bg-slate-200 dark:before:bg-zinc-800">
           {experience.map((exp, idx) => (
             <div key={idx} className="group relative pl-10">
               {/* Timeline marker */}

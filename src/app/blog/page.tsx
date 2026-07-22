@@ -52,7 +52,7 @@ export default function BlogIndexPage() {
             {posts.map((post, idx) => (
               <article
                 key={post.slug}
-                className={`glass-card flex min-h-[300px] flex-col justify-between rounded-2xl border border-slate-200/60 p-6 transition-all duration-300 hover:scale-[1.02] md:p-8 dark:border-zinc-800/60 ${
+                className={`glass-card flex min-h-75 flex-col justify-between rounded-2xl border border-slate-200/60 p-6 transition-all duration-300 hover:scale-[1.02] md:p-8 dark:border-zinc-800/60 ${
                   idx === 0
                     ? "from-accent-primary/5 via-accent-secondary/5 bg-linear-to-br to-transparent md:col-span-2 lg:col-span-2"
                     : ""
@@ -62,7 +62,7 @@ export default function BlogIndexPage() {
                   {/* Category & Date */}
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="text-xs font-semibold text-slate-500 dark:text-zinc-400">
-                      {new Date(post.date).toLocaleDateString("en-US", {
+                      {new Date(post.date).toLocaleDateString("en-GB", {
                         year: "numeric",
                         month: "long",
                         day: "numeric",

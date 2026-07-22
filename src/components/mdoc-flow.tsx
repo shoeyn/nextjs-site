@@ -144,7 +144,7 @@ export function MdocFlow() {
               {step.title.split(". ")[1]}
             </span>
             {idx === activeStep && (
-              <span className="bg-accent-primary absolute bottom-0 left-0 h-[3px] w-full rounded-full" />
+              <span className="bg-accent-primary absolute bottom-0 left-0 h-0.75 w-full rounded-full" />
             )}
           </button>
         ))}
@@ -181,7 +181,7 @@ export function MdocFlow() {
           </div>
 
           {/* Graphical diagram representing message sending */}
-          <div className="relative flex min-h-[160px] flex-col items-center justify-center overflow-hidden rounded-xl border border-slate-200/50 bg-slate-100/50 p-6 transition-all duration-300 dark:border-zinc-800/50 dark:bg-zinc-900/50">
+          <div className="relative flex min-h-40 flex-col items-center justify-center overflow-hidden rounded-xl border border-slate-200/50 bg-slate-100/50 p-6 transition-all duration-300 dark:border-zinc-800/50 dark:bg-zinc-900/50">
             <div className="relative z-10 flex w-full max-w-sm items-center justify-between">
               {/* Wallet Node */}
               <div
@@ -303,7 +303,7 @@ export function MdocFlow() {
             </span>
           </div>
 
-          <div className="flex min-h-[220px] flex-1 flex-col justify-between overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-[11px] leading-relaxed text-zinc-300 shadow-inner lg:min-h-0">
+          <div className="flex min-h-55 flex-1 flex-col justify-between overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-[11px] leading-relaxed text-zinc-300 shadow-inner lg:min-h-0">
             <div>
               <div className="mb-2 border-b border-zinc-900 pb-1 text-[10px] font-semibold text-zinc-500">
                 // {FLOW_STEPS[activeStep].technicalDetails.title}

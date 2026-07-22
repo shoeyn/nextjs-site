@@ -17,7 +17,7 @@
   --color-border-main: var(--border-main);
 }
 
-@variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :root {

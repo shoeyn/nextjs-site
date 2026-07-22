@@ -57,7 +57,7 @@ export default function Navigation() {
               >
                 {link.label}
                 {isActive(link.href) && (
-                  <span className="bg-accent-primary absolute bottom-0 left-0 h-[2px] w-full rounded-full" />
+                  <span className="bg-accent-primary absolute bottom-0 left-0 h-0.5 w-full rounded-full" />
                 )}
               </Link>
             ))}
