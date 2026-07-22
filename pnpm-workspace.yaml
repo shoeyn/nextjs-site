@@ -5,7 +5,8 @@ onlyBuiltDependencies:
   - sharp
   - unrs-resolver
 overrides:
-  "postcss": "^8.5.10"
+  "postcss": "^8.5.21"
+  "sharp": "^0.35.3"
 updateConfig:
   ignoreDependencies:
     - "@types/node"
